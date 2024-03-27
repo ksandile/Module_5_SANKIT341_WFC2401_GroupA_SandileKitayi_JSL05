@@ -35,18 +35,48 @@ function generatePlaylist(guardians, songs) {
     }
     console.log(playlists)
     // Use the map() function to create playlists for each Guardian
-    // Your code here
+    const guardianPlaylists = Object.keys(playlists).map(guardian => ({
+        [guardian]: playlists[guardian]
+    }));
+
+    return guardianPlaylists;
 }
 
 // Call generatePlaylist and display the playlists for each Guardian
 const playlists = generatePlaylist(guardians, songs);
 
 // Display the playlists for each Guardian
-for (const guardian in playlists) {
+playlists.forEach(playlistObj => {
+    const guardian = Object.keys(playlistObj)[0]; // Get the Guardian's name
+    const playlist = playlistObj[guardian]; // Get the playlist array
     console.log(`${guardian}'s Awesome Mix:`);
-    playlists[guardian].forEach(song => {
+    playlist.forEach(song => {
         console.log(`${song.title} - ${song.artist}`);
     });
     console.log("\n");
-}
+});
 
+// Get the container where you want to display the playlists
+const container = document.getElementById('playlists');
+
+// Display the playlists for each Guardian
+playlists.forEach(playlistObj => {
+    const guardian = Object.keys(playlistObj)[0]; // Get the Guardian's name
+    const playlist = playlistObj[guardian]; // Get the playlist array
+    
+    // Create a heading for the Guardian's playlist
+    const heading = document.createElement('h2');
+    heading.textContent = `${guardian}'s Awesome Mix:`;
+
+    // Create an unordered list to display the songs
+    const list = document.createElement('ul');
+    playlist.forEach(song => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${song.title} - ${song.artist}`;
+        list.appendChild(listItem);
+    });
+
+    // Append the heading and list to the container
+    container.appendChild(heading);
+    container.appendChild(list);
+});
