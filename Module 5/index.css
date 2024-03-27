@@ -14,26 +14,53 @@ h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for headings */
 }
 
-.playlist {
-    margin: 20px;
-    padding: 20px; /* Increased padding */
-    background-color: #6A5ACD; /* Purple background for playlists */
-    display: inline-block;
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for playlists */
+/* Style for the container */
+#playlists {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-left: 20px;
 }
 
-.song {
-    margin: 10px 0; /* Increased margin */
+/* Style for each column */
+.playlist-column {
+    width: calc(33.33% - 20px);
+    margin-bottom: 30px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: mediumpurple;
 }
 
-.song-title {
-    font-weight: bold;
-    color: #FFD700; /* Gold color for song titles */
-    text-decoration: underline; /* Underline effect for song titles */
+/* Style for the heading */
+h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 0.5em;
 }
 
-.song-title:hover {
-    text-decoration: none; /* Remove underline on hover */
-    color: #00FF00; /* Green color on hover */
+/* Style for the list */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Style for list items */
+li {
+    font-size: 1em;
+    color: white;
+    margin-bottom: 0.3em;
+}
+
+/* Style for the title of each song */
+a {
+    color: yellow;
+    text-decoration: underline;
+}
+
+/* Style for hover effect on list items */
+li:hover {
+    background-color: grey;
+    cursor: pointer;
 }
