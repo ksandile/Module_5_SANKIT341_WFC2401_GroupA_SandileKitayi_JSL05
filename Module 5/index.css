@@ -20,6 +20,7 @@ h1 {
     flex-wrap: wrap;
     justify-content: space-around;
     margin-left: 20px;
+    
 }
 
 /* Style for each column */
@@ -35,8 +36,9 @@ h1 {
 
 /* Style for the heading */
 h2 {
+    font-family: 'Pacifico', cursive;
     font-size: 1.5em;
-    color: #333;
+    color: white;
     margin-bottom: 0.5em;
 }
 

@@ -90,7 +90,7 @@ function displayPlaylist(guardian, playlist, container) {
         const titleLink = document.createElement('a'); 
         titleLink.href = song.youtubeLink;
         titleLink.target = "_blank";
-        titleLink.textContent = song.title; // 
+        titleLink.textContent = song.title; 
         listItem.appendChild(titleLink);
         listItem.innerHTML += ` - ${song.artist}`;
         list.appendChild(listItem);
